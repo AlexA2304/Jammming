@@ -3,7 +3,7 @@ import React from 'react';
 import './TrackList.css';
 import Track from '../Track/Track';
 
-let TrackList = props => {
+const TrackList = props => {
     return (
         <div className='Tracklist'>
             {props.tracks.map((track) => {
@@ -20,3 +20,5 @@ let TrackList = props => {
         </div>
     );
 };
+
+export default TrackList;
