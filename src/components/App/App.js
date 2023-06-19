@@ -10,6 +10,9 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [dropResults, setDropResults] = useState([]);
+  const [term, setTerm] = useState("");
+
 
   const search = useCallback((term) => {
     Spotify.search(term).then(setSearchResults);
@@ -43,6 +46,23 @@ const App = () => {
     });
   }, [playlistName, playlistTracks]);
 
+  const dropSearch = useCallback((term) => {
+    if (term === "") {
+      return;
+    } else {
+      Spotify.search(term).then(setDropResults);
+    }
+  }, []);
+
+  const handleSelect = useCallback((track) => {
+    setTerm("");
+    search(track.name);
+  }, [search]);
+
+  const handleTermChange = useCallback((newTerm) => {
+    setTerm(newTerm);
+  }, []);
+
   return (
     <div>
       <div className="head">
@@ -50,7 +70,7 @@ const App = () => {
           <h1>JAM <span className="highlight">| M |</span> ING</h1>
         </div>
         <div className="head-search">
-          <SearchBar onSearch={search} />
+          <SearchBar onSearch={search} onType={dropSearch} dropResults={dropResults} onSelect={handleSelect} onTermChange={handleTermChange} term={term} />
         </div>
       </div>
       <div className="App">

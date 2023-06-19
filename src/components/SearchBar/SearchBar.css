@@ -1,9 +1,25 @@
 .SearchBar {
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.SearchBar-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.SearchBar-input-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .SearchBar input {
@@ -16,7 +32,6 @@
   text-indent: 10px;
   font-size: 1rem;
   margin-top: .5rem;
-
 }
 
 .SearchBar input:focus {
@@ -39,9 +54,8 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  margin-left: 1rem;
   margin-top: .5rem;
-
+  margin-left: .5rem;
 }
 
 .SearchButton:hover {

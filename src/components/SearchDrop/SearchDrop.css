@@ -1,0 +1,13 @@
+.SearchDrop {
+    position: relative;
+    z-index: 9999;
+    /* increased z-index */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('../Playlist/grad.png');
+    background-position: right;
+    width: 200px;
+}
