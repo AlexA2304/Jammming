@@ -9,10 +9,18 @@ const TrackCompact = (props) => {
         }
     }, [props]);
 
+    const truncateTitle = (title) => {
+        if (title.length > 20) {
+            return title.substring(0, 20) + "...";
+        } else {
+            return title;
+        }
+    };
+
     return (
         <div className="Track" onClick={handleSelect}>
             <div className="Track-information">
-                <h3>{props.track.name}</h3>
+                <h4>{truncateTitle(props.track.name)}</h4>
             </div>
         </div>
     );

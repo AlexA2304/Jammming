@@ -32,10 +32,18 @@ const Track = (props) => {
     );
   };
 
+  const truncateTitle = (title) => {
+    if (title.length > 42) {
+      return title.substring(0, 42) + "...";
+    } else {
+      return title;
+    }
+  };
+
   return (
     <div className="Track">
       <div className="Track-information">
-        <h3>{props.track.name}</h3>
+        <h3>{truncateTitle(props.track.name)}</h3>
         <p>
           {props.track.artist} | {props.track.album}
         </p>
