@@ -1,5 +1,6 @@
 # JAMMING
-## [Watch The Demo!](https://github.com/AlexA2304/Jammming/blob/main/demo.mp4)
+
+https://github.com/AlexA2304/Jammming/assets/132388989/418ccc37-64e5-4d9c-aaed-c789e4fbd5b8
 
 ## Description
 
